@@ -5,96 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Beauty Shop | Корейская косметика</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1> K-Beauty Shop</h1>
+        <div class="header-content">
+            <h1> K-Beauty Shop </h1>
+            <button id="cart-btn" class="btn-pixel">Корзина (<span id="cart-count">0</span>)</button>
+        </div>
     </header>
-    
+
     <main class="container">
-        <section id="catalog" class="catalog">
-            <h2>Каталог товаров</h2>
-            
-            <article class="product-card">
-                <h3>COSRX Snail Mucin</h3>
-                <p class="category">Уходовая</p>
-                <p class="price">1800 ₽</p>
-                <button class="add-to-cart" data-id="1">Добавить в корзину</button>
-            </article>
+        <section id="catalog" class="catalog"></section>
 
-            <article class="product-card">
-                <h3>Beauty of Joseon Sunscreen</h3>
-                <p class="category">Уходовая</p>
-                <p class="price">1500 ₽</p>
-                <button class="add-to-cart" data-id="2">Добавить в корзину</button>
-            </article>
-
-            <article class="product-card">
-                <h3>Rom&nd Lip Tint</h3>
-                <p class="category">Декоративная</p>
-                <p class="price">900 ₽</p>
-                <button class="add-to-cart" data-id="3">Добавить в корзину</button>
-            </article>
-
-            <article class="product-card">
-                <h3>Laneige Lip Mask</h3>
-                <p class="category">Уходовая</p>
-                <p class="price">2100 ₽</p>
-                <button class="add-to-cart" data-id="4">Добавить в корзину</button>
-            </article>
-
-            <article class="product-card">
-                <h3>Etude Eye Palette</h3>
-                <p class="category">Декоративная</p>
-                <p class="price">2500 ₽</p>
-                <button class="add-to-cart" data-id="5">Добавить в корзину</button>
-            </article>
-
-            <article class="product-card">
-                <h3>Innisfree Green Tea Serum</h3>
-                <p class="category">Уходовая</p>
-                <p class="price">1900 ₽</p>
-                <button class="add-to-cart" data-id="6">Добавить в корзину</button>
-            </article>
-        </section>
-
-        <aside id="cart-sidebar" class="hidden">
+        <aside id="cart-sidebar" class="cart-sidebar hidden">
             <div class="cart-header">
                 <h2>Ваша корзина</h2>
-                <button id="close-cart">&times;</button>
+                <button id="close-cart" class="btn-close">&times;</button>
             </div>
-            <div id="cart-items"></div>
+            <div id="cart-items" class="cart-items"></div>
             <div class="cart-footer">
                 <p>Итого: <span id="cart-total">0</span> ₽</p>
-                <button id="checkout-btn">Оформить заказ</button>
+                <button id="checkout-btn" class="btn-pixel full-width">Оформить заказ</button>
             </div>
         </aside>
     </main>
 
-        <div id="checkout-modal" class="modal hidden">
+    <div id="checkout-modal" class="modal hidden">
         <div class="modal-content">
-            <span id="close-modal">&times;</span>
+            <span id="close-modal" class="btn-close">&times;</span>
             <h2>Оформление заказа</h2>
             <form id="order-form">
                 <div class="form-group">
                     <label for="firstName">Имя</label>
-                    <input type="text" id="firstName" required>
+                    <input type="text" id="firstName" required placeholder="Иван">
                 </div>
                 <div class="form-group">
                     <label for="lastName">Фамилия</label>
-                    <input type="text" id="lastName" required>
+                    <input type="text" id="lastName" required placeholder="Иванов">
                 </div>
                 <div class="form-group">
                     <label for="address">Адрес доставки</label>
-                    <input type="text" id="address" required>
+                    <input type="text" id="address" required placeholder="г. Москва, ул. Пушкина, д. 10">
                 </div>
                 <div class="form-group">
                     <label for="phone">Контактный номер телефона</label>
-                    <input type="tel" id="phone" required>
+                    <input type="tel" id="phone" required placeholder="+7 (999) 000-00-00">
                 </div>
-                <button type="submit">Создать заказ</button>
+                <button type="submit" class="btn-pixel full-width">Создать заказ</button>
             </form>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2026 K-Beauty Shop. Все права защищены. </p>
+    </footer>
+
     <script src="script.js"></script>
+</body>
+</html>
