@@ -9,41 +9,92 @@
 <body>
     <header>
         <h1> K-Beauty Shop</h1>
-        <p>Лучшая корейская косметика</p>
     </header>
-
-    <main>
-        <section id="catalog">
+    
+    <main class="container">
+        <section id="catalog" class="catalog">
             <h2>Каталог товаров</h2>
             
-            <!-- Карточка 1 -->
             <article class="product-card">
                 <h3>COSRX Snail Mucin</h3>
                 <p class="category">Уходовая</p>
                 <p class="price">1800 ₽</p>
-                <button>Добавить в корзину</button>
+                <button class="add-to-cart" data-id="1">Добавить в корзину</button>
             </article>
 
-            <!-- Карточка 2 -->
             <article class="product-card">
                 <h3>Beauty of Joseon Sunscreen</h3>
                 <p class="category">Уходовая</p>
                 <p class="price">1500 ₽</p>
-                <button>Добавить в корзину</button>
+                <button class="add-to-cart" data-id="2">Добавить в корзину</button>
             </article>
 
-            <!-- Карточка 3 -->
             <article class="product-card">
                 <h3>Rom&nd Lip Tint</h3>
                 <p class="category">Декоративная</p>
                 <p class="price">900 ₽</p>
-                <button>Добавить в корзину</button>
+                <button class="add-to-cart" data-id="3">Добавить в корзину</button>
+            </article>
+
+            <article class="product-card">
+                <h3>Laneige Lip Mask</h3>
+                <p class="category">Уходовая</p>
+                <p class="price">2100 ₽</p>
+                <button class="add-to-cart" data-id="4">Добавить в корзину</button>
+            </article>
+
+            <article class="product-card">
+                <h3>Etude Eye Palette</h3>
+                <p class="category">Декоративная</p>
+                <p class="price">2500 ₽</p>
+                <button class="add-to-cart" data-id="5">Добавить в корзину</button>
+            </article>
+
+            <article class="product-card">
+                <h3>Innisfree Green Tea Serum</h3>
+                <p class="category">Уходовая</p>
+                <p class="price">1900 ₽</p>
+                <button class="add-to-cart" data-id="6">Добавить в корзину</button>
             </article>
         </section>
+
+        <aside id="cart-sidebar" class="hidden">
+            <div class="cart-header">
+                <h2>Ваша корзина</h2>
+                <button id="close-cart">&times;</button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <p>Итого: <span id="cart-total">0</span> ₽</p>
+                <button id="checkout-btn">Оформить заказ</button>
+            </div>
+        </aside>
     </main>
 
-    <footer>
-        <p>&copy; 2026 K-Beauty Shop. Все права защищены.</p>
-    </footer>
-</body>
-</html>
+        <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            <h2>Оформление заказа</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="firstName">Имя</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Фамилия</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Контактный номер телефона</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit">Создать заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
