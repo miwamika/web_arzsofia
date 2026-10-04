@@ -91,3 +91,29 @@ function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     updateCart();
 }
+
+const checkoutModal = document.getElementById('checkout-modal');
+const orderForm = document.getElementById('order-form');
+
+document.getElementById('checkout-btn').addEventListener('click', function() {
+    if (cart.length === 0) {
+        alert('Корзина пуста!');
+        return;
+    }
+    checkoutModal.classList.remove('hidden');
+});
+
+document.getElementById('close-modal').addEventListener('click', function() {
+    checkoutModal.classList.add('hidden');
+});
+
+orderForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Заказ создан!');
+    cart = [];
+    localStorage.removeItem('kbeauty_cart');
+    updateCart();
+    orderForm.reset();
+    checkoutModal.classList.add('hidden');
+});
+
