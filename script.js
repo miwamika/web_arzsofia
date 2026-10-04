@@ -7,7 +7,7 @@ const products = [
     { id: 6, name: "Innisfree Green Tea Serum", category: "Уходовая", price: 1900 }
 ];
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('kbeauty_cart')) || [];
 
 console.log("Товары загружены:", products);
 
@@ -36,6 +36,7 @@ function updateCart() {
     const cartItemsEl = document.getElementById('cart-items');
     const cartTotalEl = document.getElementById('cart-total');
     const cartCountEl = document.getElementById('cart-count');
+    localStorage.setItem('kbeauty_cart', JSON.stringify(cart));
     
     cartItemsEl.innerHTML = '';
     let total = 0;
