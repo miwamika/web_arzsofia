@@ -47,7 +47,13 @@ function updateCart() {
         itemEl.innerHTML = `
             <div>
                 <strong>${item.name}</strong>
-                <p>${item.price} ₽ x ${item.quantity}</p>
+                <p>${item.price} ₽</p>
+                <div class="cart-item-controls">
+                    <button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+                    <button class="remove-btn" onclick="removeFromCart(${item.id})">Удалить</button>
+                </div>
             </div>
         `;
         cartItemsEl.appendChild(itemEl);
@@ -67,3 +73,20 @@ document.getElementById('cart-btn').addEventListener('click', function() {
 document.getElementById('close-cart').addEventListener('click', function() {
     document.getElementById('cart-sidebar').classList.add('hidden');
 });
+
+function changeQuantity(productId, delta) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+            removeFromCart(productId);
+        } else {
+            updateCart();
+        }
+    }
+}
+
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCart();
+}
