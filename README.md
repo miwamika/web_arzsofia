@@ -12,5 +12,5 @@
 
 ## Ссылки
 - **Репозиторий:** https://github.com/miwamika/web_arzsofia
-- **Развернутое приложение (GitHub Pages):**  https://miwamika.github.io/web_arzsofia/
+- **Развернутое приложение:**  https://miwamika.github.io/web_arzsofia/
 - **Видео-демонстрация:** https://drive.google.com/drive/folders/1NkPy9DppAIVlG593_9k2kCX3A2L2uyEt?usp=sharing
